@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket Booking System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🎟️ Ticket Booking System</h1>
+            <p>Book your ticket quickly and easily</p>
+        </header>
+
+
+        <main>
+
+            <section class="booking-card">
+
+                <h2>Book Your Ticket</h2>
+
+                <form id="bookingForm">
+
+                    <!-- Name -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Passenger Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Ticket Type -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Select Ticket
+                        </label>
+
+                        <div class="ticket-options">
+
+                            <div class="ticket-option">
+
+                                <input
+                                    type="radio"
+                                    name="ticket_type"
+                                    value="movie"
+                                    id="movie"
+                                    checked
+                                >
+
+                                <label for="movie">
+                                    🎬 Movie
+                                    <span>₹150</span>
+                                </label>
+
+                            </div>
+
+
+                            <div class="ticket-option">
+
+                                <input
+                                    type="radio"
+                                    name="ticket_type"
+                                    value="bus"
+                                    id="bus"
+                                >
+
+                                <label for="bus">
+                                    🚌 Bus
+                                    <span>₹80</span>
+                                </label>
+
+                            </div>
+
+
+                            <div class="ticket-option">
+
+                                <input
+                                    type="radio"
+                                    name="ticket_type"
+                                    value="train"
+                                    id="train"
+                                >
+
+                                <label for="train">
+                                    🚆 Train
+                                    <span>₹120</span>
+                                </label>
+
+                            </div>
+
+
+                            <div class="ticket-option">
+
+                                <input
+                                    type="radio"
+                                    name="ticket_type"
+                                    value="flight"
+                                    id="flight"
+                                >
+
+                                <label for="flight">
+                                    ✈️ Flight
+                                    <span>₹5000</span>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Quantity -->
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Number of Tickets
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            min="1"
+                            value="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Price -->
+
+                    <div class="price-box">
+
+                        <p>
+                            Price per Ticket:
+                            <strong id="ticketPrice">₹150</strong>
+                        </p>
+
+                        <p class="total">
+                            Total:
+                            <strong id="totalPrice">₹150</strong>
+                        </p>
+
+                    </div>
+
+
+                    <button type="submit">
+                        🎫 Book Ticket
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Bill -->
+
+            <section
+                class="bill-card"
+                id="billCard"
+                style="display: none;"
+            >
+
+                <h2>🧾 Booking Confirmation</h2>
+
+                <div id="billDetails"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
